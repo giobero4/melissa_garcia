@@ -45,7 +45,8 @@
 						MELISSA GARCÍA
 					</div>
 					<nav class="menu_principal tipografia_century">
-						<ul>
+						<?php wp_nav_menu(); ?>
+						<!-- <ul>
 							<li>
 								<a href="#Inicio" class="enlace_menu" title="INICIO">INICIO</a>
 							</li>
@@ -79,7 +80,7 @@
 									<img src="<?php bloginfo(stylesheet_directory); ?>/img/logo-instagram.svg" alt="Instagram" class="logo_instagram">
 								</a>
 							</li>
-						</ul>
+						</ul> -->
 					</nav>
 				</div>
 			</div>

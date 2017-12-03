@@ -162,7 +162,7 @@ body{
 .form_busqueda,
 .nombre_artista,
 .menu_principal,
-.menu_principal ul li{
+.menu_principal .menu .menu-item{
 	display:inline-block;
 	vertical-align:middle;
 }
@@ -194,12 +194,12 @@ body{
     color: #3f3c25;
 }
 
-.menu_principal ul{
+.menu_principal .menu{
 	margin:0;
 	padding:0;
 }
 
-.menu_principal ul li {
+.menu_principal .menu .menu-item {
     height: 40px;
     line-height: 40px;
     padding: 12.2px;
@@ -207,7 +207,7 @@ body{
     font-weight:700;
 }
 
-.enlace_inicio, .enlace_menu, .enlace_menu_red_social{
+.enlace_inicio, .menu-item a, .enlace_menu_red_social{
 	border:none;
 	transition:all 0.3s ease;
 	-moz-transition:all 0.3s ease;
@@ -216,13 +216,14 @@ body{
 	-webkit-transition:all 0.3s ease;
 }
 
-.enlace_menu{
+.menu-item a{
 	color:#976328;
 	font-size:12.2px;
 	letter-spacing:0.4px;
+	text-transform:uppercase;
 }
 
-.enlace_menu:hover, .enlace_inicio:hover{
+.menu-item a:hover, .enlace_inicio:hover{
 	opacity:0.75;
 }
 

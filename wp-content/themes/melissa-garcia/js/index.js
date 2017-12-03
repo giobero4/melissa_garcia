@@ -16,7 +16,7 @@ $(document).ready(function(){
 		me.Funciones = {
 
 			InicializarEventos: function(){
-				$('body').on('click', '.enlace_menu', me.Eventos.mostrarVistas);
+				$('body').on('click', '.menu-item a', me.Eventos.mostrarVistas);
 				$('body').on('click', '.titulo_cancion', me.Eventos.cargarCancionYLyric);
 				$('body').on('click', '.titulo_seccion_galeria', me.Eventos.cargarGaleriaSeleccionada);
 				$('body').on('click', '.thumbnail_img', me.Eventos.cargarImagenSegunThumbnail);
@@ -30,24 +30,27 @@ $(document).ready(function(){
 
 			mostrarVistas : function(e){
 				e.preventDefault();
-				vista = $(this).attr('href');
+				var enlaceClickeado = $(this).html();
+				var vista = $(this).attr('href');
 
-				if(vista == '#Inicio'){
+				if(enlaceClickeado == 'Inicio'){
 					$('.vista_web').fadeOut();
-					console.log("Es la vista de Inicio");
+					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
 				} else {
 					$('.vista_web').fadeOut();
 					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
+					$('#' + enlaceClickeado).find('.main_wrapper').load(vista);
 					setTimeout(function(){
-						$(vista).fadeIn();
-						$(vista).find('.main_wrapper').addClass('mostrar_main_wrapper');
-					}, 500);
+						$('#' + enlaceClickeado).fadeIn();
+						$('#' + enlaceClickeado).find('.main_wrapper').addClass('mostrar_main_wrapper');
+					}, 200);
 				}
+				history.replaceState(enlaceClickeado, "" , vista);
 			},
 
 			reproducirVideo : function(e){
 				e.preventDefault();
-				videoUrl = $(this).attr('href');
+				var videoUrl = $(this).attr('href');
 
 				$('.widget_soundcloud iframe').attr('src','');
 				$('.video_youtube iframe').attr('src',videoUrl);
@@ -72,8 +75,8 @@ $(document).ready(function(){
 
 			cargarCancionYLyric : function(e){
 				e.preventDefault();
-				cancionUrl = $(this).attr("href");
-				cancionTitulo = $(this).attr("title");
+				var cancionUrl = $(this).attr("href");
+				var cancionTitulo = $(this).attr("title");
 
 				$('.lyrics_canciones > div').hide();
 				$('[data-letra-cancion="'+cancionTitulo+'"]').fadeIn(600);
@@ -94,7 +97,7 @@ $(document).ready(function(){
 
 			cargarImagenSegunThumbnail : function(e){
 				e.preventDefault();
-				imagenSrc = $(this).find('img').attr("src");
+				var imagenSrc = $(this).find('img').attr("src");
 
 				$('.thumbnail_img').removeClass('imagen_activa');
 				$(this).addClass('imagen_activa');
