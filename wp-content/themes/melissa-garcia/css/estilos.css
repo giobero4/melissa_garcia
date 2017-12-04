@@ -988,6 +988,7 @@ body{
 
 .lyrics_canciones > div:first-child{
 	display:block;
+	height:100%;
 }
 
 .titulo_lyric{
@@ -998,11 +999,11 @@ body{
 	letter-spacing:1.5px;
 	height:53px;
 	text-transform:uppercase;
-	padding: 20px 20px 0 20px;
+	padding: 17px 20px 0 20px;
 }
 
 .texto_lyric{
-	margin: 20px 6px 0 0;
+	margin: 19px 6px 0 0;
     padding: 5px 160px 0 20px;
 	height:237px;
 	overflow:auto;

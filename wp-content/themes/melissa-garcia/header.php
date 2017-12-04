@@ -46,41 +46,6 @@
 					</div>
 					<nav class="menu_principal tipografia_century">
 						<?php wp_nav_menu(); ?>
-						<!-- <ul>
-							<li>
-								<a href="#Inicio" class="enlace_menu" title="INICIO">INICIO</a>
-							</li>
-							<li>
-								<a href="#Trayectoria" class="enlace_menu" title="TRAYECTORIA">TRAYECTORIA</a>
-							</li>
-							<li>
-								<a href="#Videos" class="enlace_menu" title="VIDEOS">VIDEOS</a>
-							</li>
-							<li>
-								<a href="#Musica" class="enlace_menu" title="MÚSICA">MÚSICA</a>
-							</li>
-							<li>
-								<a href="#Galeria" class="enlace_menu" title="GALERÍA">GALERÍA</a>
-							</li>
-							<li class="mr-26">
-								<a href="#AyudaSocial" class="enlace_menu" title="AYUDA SOCIAL">AYUDA SOCIAL</a>
-							</li>
-							<li class="pr-3 pl-3">
-								<a href="https://www.facebook.com/MelissaGarcia.pe/" class="enlace_menu_red_social" title="Facebook" target="_blank">
-									<img src="<?php bloginfo(stylesheet_directory); ?>/img/logo-facebook.svg" alt="Facebook" class="logo_facebook">
-								</a>
-							</li>
-							<li class="pr-3 pl-3">
-								<a href="" class="enlace_menu_red_social" title="Twitter" target="_blank">
-									<img src="<?php bloginfo(stylesheet_directory); ?>/img/logo-twitter.svg" alt="Twitter" class="logo_twitter">
-								</a>
-							</li>
-							<li class="pr-3 pl-3">
-								<a href="https://www.instagram.com/melissagarciaof/?hl=es" class="enlace_menu_red_social" title="Instagram" target="_blank">
-									<img src="<?php bloginfo(stylesheet_directory); ?>/img/logo-instagram.svg" alt="Instagram" class="logo_instagram">
-								</a>
-							</li>
-						</ul> -->
 					</nav>
 				</div>
 			</div>

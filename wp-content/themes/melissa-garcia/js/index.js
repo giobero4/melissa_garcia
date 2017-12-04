@@ -34,20 +34,25 @@ $(document).ready(function(){
 				enlaceClickeado = $(this).html();
 				vista = $(this).attr('href');
 
+				$('.vista_web').fadeOut();
+				$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
+
 				if(enlaceClickeado == 'Inicio'){
 					$('.vista_web').fadeOut();
 					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
+				} else if(enlaceClickeado == 'Música') {
+					$('#Musica').find('.main_wrapper').load(vista);
+					setTimeout(function(){
+						$('#Musica').fadeIn();
+						$('#Musica').find('.main_wrapper').addClass('mostrar_main_wrapper');
+					}, 400);
 				} else if(enlaceClickeado == 'Ayuda Social') {
-					$('.vista_web').fadeOut();
-					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
 					$('#AyudaSocial').find('.main_wrapper').load(vista);
 					setTimeout(function(){
 						$('#AyudaSocial').fadeIn();
 						$('#AyudaSocial').find('.main_wrapper').addClass('mostrar_main_wrapper');
 					}, 400);
 				} else {
-					$('.vista_web').fadeOut();
-					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
 					$('#' + enlaceClickeado).find('.main_wrapper').load(vista);
 					setTimeout(function(){
 						$('#' + enlaceClickeado).fadeIn();
@@ -84,17 +89,17 @@ $(document).ready(function(){
 
 			cargarCancionYLyric : function(e){
 				e.preventDefault();
-				cancionUrl = $(this).attr("href");
-				cancionTitulo = $(this).attr("title");
+				cancionUrl = $(this).attr('href');
+				cancionTitulo = $(this).attr('title');
 
 				$('.lyrics_canciones > div').hide();
-				$('[data-letra-cancion="'+cancionTitulo+'"]').fadeIn(600);
+				$('[data-letra-cancion="'+cancionTitulo+'"]').fadeIn(400);
 				$('.titulo_cancion').removeClass('titulo_cancion_activo');
 				$(this).addClass('titulo_cancion_activo');
 				$('.reproductor_soundcloud').fadeOut(300);
 				setTimeout(function(){
 					$('.reproductor_soundcloud').attr('src',cancionUrl);
-					$('.reproductor_soundcloud').fadeIn(700); 
+					$('.reproductor_soundcloud').fadeIn(300);
 				}, 300);
 			},
 
@@ -106,7 +111,7 @@ $(document).ready(function(){
 
 			cargarImagenSegunThumbnail : function(e){
 				e.preventDefault();
-				imagenSrc = $(this).find('img').attr("src");
+				imagenSrc = $(this).find('img').attr('src');
 
 				$('.thumbnail_img').removeClass('imagen_activa');
 				$(this).addClass('imagen_activa');
