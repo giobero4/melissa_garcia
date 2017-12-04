@@ -1,4 +1,5 @@
 var Home;
+var enlaceClickeado;
 var vista;
 var cancionTitulo;
 var cancionUrl;
@@ -30,8 +31,8 @@ $(document).ready(function(){
 
 			mostrarVistas : function(e){
 				e.preventDefault();
-				var enlaceClickeado = $(this).html();
-				var vista = $(this).attr('href');
+				enlaceClickeado = $(this).html();
+				vista = $(this).attr('href');
 
 				if(enlaceClickeado == 'Inicio'){
 					$('.vista_web').fadeOut();
@@ -43,14 +44,14 @@ $(document).ready(function(){
 					setTimeout(function(){
 						$('#' + enlaceClickeado).fadeIn();
 						$('#' + enlaceClickeado).find('.main_wrapper').addClass('mostrar_main_wrapper');
-					}, 200);
+					}, 400);
 				}
 				history.replaceState(enlaceClickeado, "" , vista);
 			},
 
 			reproducirVideo : function(e){
 				e.preventDefault();
-				var videoUrl = $(this).attr('href');
+				videoUrl = $(this).attr('href');
 
 				$('.widget_soundcloud iframe').attr('src','');
 				$('.video_youtube iframe').attr('src',videoUrl);
@@ -75,8 +76,8 @@ $(document).ready(function(){
 
 			cargarCancionYLyric : function(e){
 				e.preventDefault();
-				var cancionUrl = $(this).attr("href");
-				var cancionTitulo = $(this).attr("title");
+				cancionUrl = $(this).attr("href");
+				cancionTitulo = $(this).attr("title");
 
 				$('.lyrics_canciones > div').hide();
 				$('[data-letra-cancion="'+cancionTitulo+'"]').fadeIn(600);
@@ -97,7 +98,7 @@ $(document).ready(function(){
 
 			cargarImagenSegunThumbnail : function(e){
 				e.preventDefault();
-				var imagenSrc = $(this).find('img').attr("src");
+				imagenSrc = $(this).find('img').attr("src");
 
 				$('.thumbnail_img').removeClass('imagen_activa');
 				$(this).addClass('imagen_activa');
