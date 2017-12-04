@@ -37,6 +37,14 @@ $(document).ready(function(){
 				if(enlaceClickeado == 'Inicio'){
 					$('.vista_web').fadeOut();
 					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
+				} else if(enlaceClickeado == 'Ayuda Social') {
+					$('.vista_web').fadeOut();
+					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');
+					$('#AyudaSocial').find('.main_wrapper').load(vista);
+					setTimeout(function(){
+						$('#AyudaSocial').fadeIn();
+						$('#AyudaSocial').find('.main_wrapper').addClass('mostrar_main_wrapper');
+					}, 400);
 				} else {
 					$('.vista_web').fadeOut();
 					$('.vista_web').find('.main_wrapper').removeClass('mostrar_main_wrapper');

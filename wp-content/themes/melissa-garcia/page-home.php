@@ -452,23 +452,6 @@
 	<div class="fondo_degradado_con_transparencia_trayectoria"></div>
 	<div class="textura"></div>
 	<div class="main_wrapper agregarMargenesLateralesInternos">
-		<div class="ayuda_social_info">
-			<div class="ayuda_social_info_titulo">
-				<img src="<?php bloginfo(stylesheet_directory); ?>/img/titulo-ayuda-social.svg" alt="AYUDA SOCIAL">
-			</div>
-			<div class="ayuda_social_info_texto">
-				<p class="tipografia_century">
-					Creo que no hay mayor alegría espiritual que poder ayudar a otros hacer con los demás lo que quieres que los demás hagan contigo, es una gran enseñanza que nos dio Jesús.
-				</p>
-				<p class="tipografia_century">
-					Los niños son el futuro del Perú y en ellos me quiero concentrar para poder ayudar de distintas formas. 
-				</p>
-			</div>
-		</div>
-		<div class="ayuda_social_img">
-			<div class="degradado_img_trayectoria"></div>
-			<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-ayuda-social.jpg" alt="Melissa García">
-		</div>
 	</div>
 </section>
 <div class="fondo_popup_video_youtube">
