@@ -25,6 +25,19 @@ register_nav_menus( array(
 	'menu_melissa_garcia' => 'Menú Melissa García'
 ) );
 
+function shapeSpace_customize_image_sizes($sizes) {
+
+	unset($sizes['thumbnail']);
+	unset($sizes['medium']);
+	unset($sizes['medium_large']);
+	unset($sizes['large']);
+	return $sizes;
+
+}
+
+add_filter('intermediate_image_sizes_advanced', 'shapeSpace_customize_image_sizes');
+add_filter('max_srcset_image_width', create_function('', 'return 1;'));
+
 
 /* TIPO DE ENTRADA PERSONALIZADA VIDEOS */
 
@@ -306,5 +319,81 @@ function guardar_lyrics( $post_id ) {
 }
 
 add_action('save_post', 'guardar_lyrics');
+
+/* TIPO DE ENTRADA PERSONALIZADA GALERÍA */
+
+function melissa_garcia_galeria_custom_post_type() {
+	$labels = array(
+		'name' 					=> 'Imágenes',
+		'singular_name' 		=> 'Imagen',
+		'add_new'				=> 'Añadir nueva imagen',
+		'add_new_item'			=> 'Añadir nueva imagen',
+		'edit_item'				=> 'Editar imagen',
+		'new_item'				=> 'Nueva imagen',
+		'view_item'				=> 'Ver imagen',
+		'search_items'			=> 'Buscar imágenes',
+		'not_found'				=> 'No se encontró la imagen',
+		'not_found_in_trash'	=> 'Ninguna imagen encontrada en la papelera',
+		'all_items'				=> 'Todas las imágenes',
+		'insert_into_item'		=> 'Insertar imagen principal',
+		'uploaded_to_this_item'	=> 'Subido como imagen principal',
+		'featured_image'		=> 'Imagen previa',
+		'set_featured_image'	=> 'Agregar imagen previa',
+		'remove_featured_image' => 'Quitar imagen',
+		'use_featured_image'	=> 'Usar como imagen previa',
+		'menu_name'				=> 'Imágenes'
+	);
+
+	$args = array(
+		'public'			=> true,
+		'has_archive'		=> false,
+		'labels' 			=> $labels,
+		'menu_icon'			=> 'dashicons-camera',
+		'show_ui' 			=> true,
+		'capability_type'	=> 'page',
+		'hierarchical'		=> true,
+		'menu_position'		=> 21,
+		'supports'			=> array( 'title', 'thumbnail' )
+	);
+
+	register_post_type( 'imagenes', $args );
+}
+
+add_action('init', 'melissa_garcia_galeria_custom_post_type');
+
+/* TAXONOMIAS PERSONALIZADAS PARA SECCIÓN GALERÍA */
+
+function agregar_taxonomias_seccion_galeria() {
+
+	$labels = array(
+		'name' 					=> 'Galerías',
+		'singular_name' 		=> 'Galeria de imágenes',
+		'add_new'				=> 'Añadir nueva galería',
+		'add_new_item'			=> 'Añadir nueva galería de imágenes',
+		'edit_item'				=> 'Editar galería de imágenes',
+		'update_item'			=> 'Actualizar galería de imágenes',
+		'search_items'			=> 'Buscar galería de imágenes',
+		'not_found'				=> 'No se encontró la galería de imágenes',
+		'not_found_in_trash'	=> 'No se encontró ninguna galería de imágenes en la papelera',
+		'all_items'				=> 'Todas las galerías',
+		'menu_name'				=> 'Galerías'
+	);
+
+	$args = array(
+		'hierarchical' 		=> true,
+		'has_archive'		=> false,
+		'labels'			=> $labels,
+		'show_ui'			=> true,
+		'show_admin_column'	=> true,
+		'query_var'			=> true,
+		'exclude_from_search' => false,
+		'rewrite'			=> array( 'slug' => 'galeria' )
+	);
+
+	register_taxonomy( 'galeria', array('imagenes'), $args );
+
+}
+
+add_action('init','agregar_taxonomias_seccion_galeria');
 
 ?>

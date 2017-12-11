@@ -65,69 +65,6 @@
 	<div class="fondo_degradado_con_transparencia_trayectoria"></div>
 	<div class="textura"></div>
 	<div class="main_wrapper">
-		<div class="contenedor_galeria_fotos">
-			<div class="bloq_izq">
-				<div class="seccion_galeria_fotos_titulo">
-					<img src="<?php bloginfo(stylesheet_directory); ?>/img/titulo-galeria-fotos.svg" alt="GALERÍA DE FOTOS">
-				</div>
-				<ul class="lista_seccion_galerias tipografia_century">
-					<li>
-						<a href="" title="Presentaciones" class="titulo_seccion_galeria">Presentaciones</a>
-					</li>
-					<li>
-						<a href="" class="titulo_seccion_galeria seccion_galeria_activa" title="Sesiones de fotos">Sesiones de fotos</a>
-					</li>
-					<li>
-						<a href="" class="titulo_seccion_galeria" title="Ayuda Social">Ayuda Social</a>
-					</li>
-				</ul>
-			</div>
-			<div class="bloq_der">
-				<div class="contenedor_full_img">
-					<div class="full_img">
-						<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-8.jpg" alt="Melissa García">
-					</div>
-				</div>
-				<div class="flecha_izquierda">
-					<a href="" title="Ir a la izquierda">
-						<img src="<?php bloginfo(stylesheet_directory); ?>/img/flecha-slider-izquierda.png" alt="">
-					</a>
-				</div>
-				<div class="contenedor_thumbnails">
-					<div class="thumbnails_galeria">
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-1.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-2.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-3.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-4.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-5.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-6.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-7.jpg" alt="">
-						</a>
-						<a href="" title="" class="thumbnail_img imagen_activa">
-							<img src="<?php bloginfo(stylesheet_directory); ?>/img/img-galeria-8.jpg" alt="">
-						</a>
-					</div>
-				</div>
-				<div class="flecha_derecha">
-					<a href="" title="Ir a la derecha">
-						<img src="<?php bloginfo(stylesheet_directory); ?>/img/flecha-slider-derecha.png" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
 	</div>
 </section>
 <section class="vista_ayuda_social vista_web" id="AyudaSocial">

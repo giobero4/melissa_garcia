@@ -5,6 +5,7 @@ var cancionTitulo;
 var cancionUrl;
 var videoUrl;
 var imagenSrc;
+var galeriaSeleccionada;
 
 $(document).ready(function(){
 
@@ -105,13 +106,21 @@ $(document).ready(function(){
 
 			cargarGaleriaSeleccionada : function(e) {
 				e.preventDefault();
+				galeriaSeleccionada = $(this).attr('href');
+
 				$('.titulo_seccion_galeria').removeClass('seccion_galeria_activa');
 				$(this).addClass('seccion_galeria_activa');
+				$('.bloq_der').fadeOut();
+				$('.bloq_der').load(galeriaSeleccionada);
+				$('.bloq_der').delay(400);
+				$('.bloq_der').fadeIn();
+				
+				history.replaceState("Galeria", "" , galeriaSeleccionada);
 			},
 
 			cargarImagenSegunThumbnail : function(e){
 				e.preventDefault();
-				imagenSrc = $(this).find('img').attr('src');
+				imagenSrc = $(this).attr('href');
 
 				$('.thumbnail_img').removeClass('imagen_activa');
 				$(this).addClass('imagen_activa');

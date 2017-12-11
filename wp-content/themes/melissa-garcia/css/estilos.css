@@ -775,12 +775,12 @@ body{
 }
 
 .bloq_izq{
-	width:41%;
+	width:38%;
 }
 
 .bloq_der{
-	width:58.38%;
-	padding-top:20px;
+	width:61%;
+	padding-top:13px;
 	position:relative;
 }
 
@@ -810,7 +810,7 @@ body{
 }
 
 .contenedor_full_img, .full_img, .contenedor_thumbnails{
-	max-width:533px;
+	max-width:556px;
 }
 
 .flecha_izquierda, .flecha_derecha{
@@ -865,7 +865,7 @@ body{
 }
 
 .contenedor_full_img, .full_img{
-	height:355px;
+	height:370px;
 }
 
 .full_img{
@@ -922,6 +922,13 @@ body{
     margin: 0 auto;
     left: 0;
     right: 0;
+}
+
+.mensaje_cuando_no_hay_imagenes{
+	color: #FFF;
+    margin-top: 148px;
+    font-size: 15px;
+    text-align: center;
 }
 
 .vista_ayuda_social{
