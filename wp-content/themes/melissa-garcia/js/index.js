@@ -18,12 +18,16 @@ $(document).ready(function(){
 		me.Funciones = {
 
 			InicializarEventos: function(){
-				$('body').on('click', '.menu-item a', me.Eventos.mostrarVistas);
+				$('body').on('click', '.enlace_menu a', me.Eventos.mostrarVistas);
 				$('body').on('click', '.titulo_cancion', me.Eventos.cargarCancionYLyric);
 				$('body').on('click', '.titulo_seccion_galeria', me.Eventos.cargarGaleriaSeleccionada);
 				$('body').on('click', '.thumbnail_img', me.Eventos.cargarImagenSegunThumbnail);
 				$('body').on('click', '.enlace_video_youtube', me.Eventos.reproducirVideo);
 				$('body').on('click', '.icono_cerrar_popup', me.Eventos.cerrarPopupVideo);
+			},
+
+			quitarTextoMenuRedesSociales: function() {
+				$('.enlace_menu_red_social').find('a').empty();
 			}
 
 		};
@@ -112,7 +116,7 @@ $(document).ready(function(){
 				$(this).addClass('seccion_galeria_activa');
 				$('.bloq_der').fadeOut();
 				$('.bloq_der').load(galeriaSeleccionada);
-				$('.bloq_der').delay(400);
+				$('.bloq_der').delay(500);
 				$('.bloq_der').fadeIn();
 				
 				history.replaceState("Galeria", "" , galeriaSeleccionada);
@@ -135,6 +139,7 @@ $(document).ready(function(){
 
 		me.Inicializar = function(){
 			me.Funciones.InicializarEventos();
+			me.Funciones.quitarTextoMenuRedesSociales();
 		}
 
 	}

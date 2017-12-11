@@ -162,7 +162,8 @@ body{
 .form_busqueda,
 .nombre_artista,
 .menu_principal,
-.menu_principal .menu .menu-item{
+.menu_principal .menu .enlace_menu,
+.menu_principal .menu .enlace_menu_red_social{
 	display:inline-block;
 	vertical-align:middle;
 }
@@ -197,9 +198,10 @@ body{
 .menu_principal .menu{
 	margin:0;
 	padding:0;
+	list-style-type: none;
 }
 
-.menu_principal .menu .menu-item {
+.menu_principal .menu .enlace_menu, .menu_principal .menu .enlace_menu_red_social {
     height: 40px;
     line-height: 40px;
     padding: 12.2px;
@@ -207,7 +209,7 @@ body{
     font-weight:700;
 }
 
-.enlace_inicio, .menu-item a, .enlace_menu_red_social{
+.enlace_inicio a, .enlace_menu a, .enlace_menu_red_social a{
 	border:none;
 	transition:all 0.3s ease;
 	-moz-transition:all 0.3s ease;
@@ -216,14 +218,14 @@ body{
 	-webkit-transition:all 0.3s ease;
 }
 
-.menu-item a{
+.enlace_menu a{
 	color:#976328;
 	font-size:12.2px;
 	letter-spacing:0.4px;
 	text-transform:uppercase;
 }
 
-.menu-item a:hover, .enlace_inicio:hover{
+.enlace_menu a:hover, .enlace_inicio a:hover{
 	opacity:0.75;
 }
 
@@ -239,7 +241,7 @@ body{
 	padding-left: 3px!important;
 }
 
-.enlace_menu_red_social{
+.enlace_menu_red_social a{
 	width:26px;
 	height:26px;
 	background-color:#976328;
@@ -248,7 +250,7 @@ body{
     top: 5px;
 }
 
-.enlace_menu_red_social:hover{
+.enlace_menu_red_social a:hover{
 	opacity:0.75;
 }
 
@@ -256,22 +258,25 @@ body{
 	position:relative;
 }
 
-.logo_facebook{
-	width: 6.02px;
-    height: 11.91px;
-    top: 7px;
+.logo_facebook a{
+    background-image: url(../img/logo-facebook.svg);
+    background-repeat: no-repeat;
+    background-position: 48% center;
+    background-size: 7px;
 }
 
-.logo_twitter{
-	width: 12.6px;
-    height: 10.24px;
-    top: 8px;
+.logo_twitter a{
+	background-image: url(../img/logo-twitter.svg);
+    background-repeat: no-repeat;
+    background-position: 48% center;
+    background-size: 14px;
 }
 
-.logo_instagram{
-	width:11.84px;
-	height:11.95px;
-	top:7px;
+.logo_instagram a{
+	background-image: url(../img/logo-instagram.svg);
+    background-repeat: no-repeat;
+    background-position: 48% center;
+    background-size: 12px;
 }
 
 /* FIN CABECERA */
